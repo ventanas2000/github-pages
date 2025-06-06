@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euroal - Innovación en Aluminio y Cristal</title>
+    <style>
+        /* --- General Styles & Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #C00000; /* Red from logo */
+            --dark-grey: #333;
+            --medium-grey: #555;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem 1.5rem;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--dark-grey);
+        }
+        
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem; }
+        h3 { font-size: 1.5rem; color: var(--primary-color); }
+
+        section {
+            padding: 4rem 0;
+        }
+        
+        section:nth-of-type(even) {
+            background-color: var(--light-grey);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #A00000;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 25px;
+        }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            color: var(--medium-grey);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/8Qpgyf2.jpeg'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 70px; /* Header height */
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .service-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .service-item h3 {
+             margin-top: 0;
+        }
+
+        /* --- Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .project-card-content h3 {
+            margin-top: 0;
+        }
+
+        .project-card-content p {
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+        }
+        
+        /* --- About Us Section --- */
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        /* --- Contact Section --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info strong {
+            color: var(--dark-grey);
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .main-header .container { flex-direction: column; gap: 1rem; }
+            .hero { margin-top: 115px; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#inicio" class="logo"><span>EURO</span>AL</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container hero-content">
+                <h1>Diseño e Innovación en Aluminio y Cristal</h1>
+                <p>Creamos soluciones personalizadas para proyectos residenciales y comerciales. Calidad en la que puedes confiar.</p>
+                <a href="#contacto" class="btn">Cotiza tu Proyecto</a>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <div class="container">
+                <h2>Nuestras Soluciones</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Fachadas de Cristal Templado</h3>
+                        <p>Diseño de exteriores modernos y seguros que brindan elegancia, durabilidad y maximizan la luz natural.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Puertas y Ventanas Europeas</h3>
+                        <p>Sistemas corredizos y abatibles con la más alta tecnología para un aislamiento y estética superior.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Cancelería de Aluminio</h3>
+                        <p>Soluciones versátiles y resistentes para interiores, como barandales y divisiones de oficina.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Escaparates Comerciales</h3>
+                        <p>Atraemos más clientes a tu negocio con frentes de cristal impactantes, seguros y a la medida.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <div class="container">
+                <h2>Nuestra Experiencia, Tu Confianza</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://i.imgur.com/k2yQcGr.jpeg" alt="Proyecto Sky Tulum"> <div class="project-card-content">
+                            <h3>Departamentos Sky Tulum</h3>
+                            <p>Departamentos con corredizas serie 10000 acabado negro y ventanas corredizas en serie Finestra Plus.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://i.imgur.com/dJ8o84J.jpeg" alt="Proyecto Vista Vento Guadalajara"> <div class="project-card-content">
+                            <h3>Departamentos Vista Vento Guadalajara</h3>
+                            <p>Barandales de cristal laminado y templado con herrajes de botón de Acero Inox y ventanas serie 1400.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://i.imgur.com/7gK5Y8v.jpeg" alt="Proyecto MUUK Tulum"> <div class="project-card-content">
+                            <h3>Departamentos MUUK Tulum</h3>
+                            <p>Departamentos con corredizas serie finestra acabado blanco y ventanas proyección serie 1400.</p>
+                        </div>
+                    </div>
+                     <div class="project-card">
+                        <img src="https://i.imgur.com/vH7Wl3t.jpeg" alt="Proyecto Hamptons Vallarta"> <div class="project-card-content">
+                            <h3>Departamentos Hamptons Vallarta</h3>
+                            <p>Barandal acabado madera con cristal templado serie Riquiera y Puertas Corredizas serie 10000.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://i.imgur.com/3qFfE8u.jpeg" alt="Terraza Vallarta Gardens"> <div class="project-card-content">
+                            <h3>Terraza Vallarta Gardens</h3>
+                            <p>Apergolado acabado madera en estructura de acero con cristal templado de colores en la parte superior.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://i.imgur.com/qE4J3Lw.jpeg" alt="Pueblo Bonito Emerald Bay"> <div class="project-card-content">
+                            <h3>Pueblo Bonito Emerald Bay Mazatlán</h3>
+                            <p>Puertas doble abatible serie 1400 con diseño Retro, evocando a las antiguas casonas y haciendas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="nosotros">
+            <div class="container about-content">
+                <h2>Innovando para tu Bienestar desde 2005</h2>
+                <p>Somos Euroal Ventanas, una empresa líder dedicada a la fabricación e instalación de cancelería de aluminio y cristal templado. Desde nuestra fundación en 2005, hemos tenido la misión de satisfacer las más altas exigencias del mercado, utilizando siempre la mejor tecnología y sistemas de vanguardia.</p>
+                <p>Apoyamos a nuestros clientes, desde arquitectos y constructoras hasta clientes particulares, a materializar sus ideas. Aportamos nuestra experiencia, garantizamos una calidad excepcional y ofrecemos un precio justo. Creemos que una ventana, una puerta o una fachada bien diseñadas no solo son funcionales, sino que reflejan la personalidad y el estilo de vida de quienes las usarán. Estamos aquí para ser tus aliados en esa visión.</p>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="container">
+                <h2>Hagamos Realidad tu Proyecto</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form action="#"> <input type="text" name="nombre" placeholder="Tu Nombre *" required>
+                            <input type="email" name="email" placeholder="Tu Email *" required>
+                            <input type="tel" name="telefono" placeholder="Tu Teléfono">
+                            <textarea name="mensaje" rows="6" placeholder="Escribe aquí los detalles de tu proyecto..."></textarea>
+                            <button type="submit" class="btn">Enviar Solicitud</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <p><strong>Email:</strong> info@euroal.biz</p>
+                        
+                        <h3>📍 Sucursal Guadalajara</h3>
+                        <p>
+                            <strong>Dirección:</strong> Joaquin Angulo #1205, Col. Santa Tere, Guadalajara, Jal.<br>
+                            <strong>Teléfono:</strong> 334-183-7441
+                        </p>
+
+                        <h3>📍 Sucursal Sureste</h3>
+                        <p>
+                            <strong>Dirección:</strong> Av. Chichenitza SM 62 MZ 01 LT 02, Cancún, Quintana Roo. C.P. 77513<br>
+                            <strong>Teléfono:</strong> 998-559-3150
+                        </p>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Euroal - Innovando para su bienestar. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
