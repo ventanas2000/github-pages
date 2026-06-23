@@ -1,0 +1,54 @@
+name: clasificados_pro_app
+description: Aplicación de marketplace hiperlocal "Clasificados Pro" - Confianza y Proximidad.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI & Icons
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.1.0
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Navigation
+  go_router: ^13.0.0
+  
+  # Networking
+  http: ^1.2.0
+  dio: ^5.4.0
+  
+  # Location & Maps
+  geolocator: ^11.0.0
+  permission_handler: ^11.3.0
+  
+  # Images
+  cached_network_image: ^3.3.1
+  image_picker: ^1.0.7
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  sqflite: ^2.3.2
+  
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.3.3
+  url_launcher: ^6.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/
